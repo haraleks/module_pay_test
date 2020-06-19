@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payments pagw</title>
+</head>
+<body>
+    <h2> Payments forms</h2>
+     <form name="SendOrder" method="POST" action="{% url 'confirm' %}">
+         {% csrf_token %}
+<!--         ID users &nbsp;<input type="text" name="id_user">-->
+<!--         order id &nbsp;<input type="text" name="order_id">-->
+<!--         amount &nbsp;<input type="text" name="amount">-->
+         {{ form }}
+         <p><br><input type="submit"></p>
+         <br>
+</body>
+</html>

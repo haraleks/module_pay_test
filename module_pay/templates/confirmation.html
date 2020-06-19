@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data confirmation</title>
+</head>
+<body>
+<h1>Подтвердите ваши данные</h1>
+{{ data.id_user }}
+{{ data.order_id }}
+{{ data.amount }}
+
+ <form name="SendOrder" method="POST" action="https://testpay.kkb.kz/jsp/process/logon.jsp">
+         {% csrf_token %}
+         <input type="hidden" name="Signed_Order_B64", value="{{ data_bank.Signed_Order_B64 }}">
+         <input type="hidden" name="Language", value="ru">
+         <input type="hidden" name="BackLink", value=" {{ data_bank.BackLink }} ">
+         <input type="hidden" name="PostLink", value=" {{ data_bank.PostLink }} ">
+         <input type="hidden" name="email", value=" {{ data_bank.email }} ">
+
+         <p><br><input type="submit"></p>
+         <br>
+</body>
+</html>
